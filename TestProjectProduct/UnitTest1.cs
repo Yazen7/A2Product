@@ -12,7 +12,7 @@ namespace TestProjectProduct
         [SetUp]
         public void Setup()
         {
-            product = new Product.Product(100, "Test Product", 100m, 50);
+            product = new Product.Product(100, "Test Product", 100, 50);
         }
 
         [Test]
@@ -38,21 +38,21 @@ namespace TestProjectProduct
         [Test]
         public void MinItemPrice()
         {
-            product = new Product.Product(10, "Cheap Product", 5m, 100);
+            product = new Product.Product(10, "Cheap Product", 5, 100);
             Assert.That(product.ItemPrice, Is.EqualTo(5m));
         }
 
         [Test]
         public void MaxItemPrice()
         {
-            product = new Product.Product(10, "Expensive Product", 5000m, 100);
+            product = new Product.Product(10, "Expensive Product", 5000, 100);
             Assert.That(product.ItemPrice, Is.EqualTo(5000m));
         }
 
         [Test]
         public void InvalidItemPrice()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Invalid Price Product", -1m, 100));
+            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Invalid Price Product", -1, 100));
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace TestProjectProduct
         }
 
         [Test]
-        public void InvalidStockAmount()
+        public void WrongStockAmount()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Invalid Stock Product", 100, -1));
         }
@@ -78,28 +78,28 @@ namespace TestProjectProduct
         [Test]
         public void IncreaseStock()
         {
-            int initialStock = product.StockAmount;
+            int mainStock = product.StockAmount;
             int increaseAmount = 5;
             product.IncreaseStock(increaseAmount);
-            Assert.That(product.StockAmount, Is.EqualTo(initialStock + increaseAmount));
+            Assert.That(product.StockAmount, Is.EqualTo(mainStock + increaseAmount));
         }
 
         [Test]
         public void DecreaseStock()
         {
             product = new Product.Product(10, "Test Product", 100, 50);
-            int initialStock = product.StockAmount;
+            int mainStock = product.StockAmount;
             int decreaseAmount = 5;
             product.DecreaseStock(decreaseAmount);
-            Assert.That(product.StockAmount, Is.EqualTo(initialStock - decreaseAmount));
+            Assert.That(product.StockAmount, Is.EqualTo(mainStock - decreaseAmount));
         }
 
         [Test]
         public void DecreaseStockTooMuch()
         {
             product = new Product.Product(10, "Test Product", 100, 10);
-            int excessiveDecreaseAmount = 60;
-            Assert.Throws<InvalidOperationException>(() => product.DecreaseStock(excessiveDecreaseAmount));
+            int aLotDecreaseAmount = 60;
+            Assert.Throws<InvalidOperationException>(() => product.DecreaseStock(aLotDecreaseAmount));
         }
     }
 }
