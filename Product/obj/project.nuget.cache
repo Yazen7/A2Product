@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "dbp3RJ1WkkQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yazin\\OneDrive\\Desktop\\PROG2070\\Product\\Product\\Product.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yazin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Yazin\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\Yazin\\.nuget\\packages\\nunit\\3.14.0\\nunit.3.14.0.nupkg.sha512",
+    "C:\\Users\\Yazin\\.nuget\\packages\\nunit.analyzers\\4.6.0\\nunit.analyzers.4.6.0.nupkg.sha512",
+    "C:\\Users\\Yazin\\.nuget\\packages\\nunit3testadapter\\4.6.0\\nunit3testadapter.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
