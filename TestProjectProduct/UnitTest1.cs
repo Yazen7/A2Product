@@ -18,21 +18,21 @@ namespace TestProjectProduct
         [Test]
         public void MinProdID()
         {
-            product = new Product.Product(5, "Sample Product", 100, 50);
+            product = new Product.Product(5, "Main Product", 100, 50);
             Assert.That(product.ProdID, Is.EqualTo(5));
         }
 
         [Test]
         public void MaxProdID()
         {
-            product = new Product.Product(50000, "Sample Product", 100, 50);
+            product = new Product.Product(50000, "Main Product", 100, 50);
             Assert.That(product.ProdID, Is.EqualTo(50000));
         }
 
         [Test]
-        public void InvalidProdID()
+        public void WrongProdID()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(0, "Invalid Product", 100, 50));
+            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(0, "Wrong Product", 100, 50));
         }
 
         [Test]
@@ -50,9 +50,9 @@ namespace TestProjectProduct
         }
 
         [Test]
-        public void InvalidItemPrice()
+        public void WrongItemPrice()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Invalid Price Product", -1, 100));
+            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Wrong product price", -1, 100));
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace TestProjectProduct
         [Test]
         public void WrongStockAmount()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Invalid Stock Product", 100, -1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => new Product.Product(10, "Wrong Stock Product", 100, -1));
         }
 
         [Test]

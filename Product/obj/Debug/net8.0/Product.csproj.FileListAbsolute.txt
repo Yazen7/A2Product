@@ -16,3 +16,4 @@ C:\Users\Yazin\OneDrive\Desktop\PROG2070\Product\Product\obj\Debug\net8.0\Produc
 C:\Users\Yazin\OneDrive\Desktop\PROG2070\Product\Product\obj\Debug\net8.0\refint\Product.dll
 C:\Users\Yazin\OneDrive\Desktop\PROG2070\Product\Product\obj\Debug\net8.0\Product.pdb
 C:\Users\Yazin\OneDrive\Desktop\PROG2070\Product\Product\obj\Debug\net8.0\ref\Product.dll
+C:\Users\Yazin\OneDrive\Desktop\PROG2070\Product\Product\obj\Debug\net8.0\Product.sourcelink.json
