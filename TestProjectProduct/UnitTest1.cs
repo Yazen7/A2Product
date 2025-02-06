@@ -101,6 +101,52 @@ namespace TestProjectProduct
             int aLotDecreaseAmount = 60;
             Assert.Throws<InvalidOperationException>(() => product.DecreaseStock(aLotDecreaseAmount));
         }
+        [Test]
+        public void IncreaseStockByOne()
+        {
+            int initialStock = product.StockAmount;
+            product.IncreaseStock(1);
+            Assert.That(product.StockAmount, Is.EqualTo(initialStock + 1));
+        }
+
+        [Test]
+        public void DecreaseStockByOne()
+        {
+            product = new Product.Product(10, "Test Product", 100, 10);
+            product.DecreaseStock(1);
+            Assert.That(product.StockAmount, Is.EqualTo(9));
+        }
+
+        [Test]
+        public void IncreaseStockToMaximum()
+        {
+            product = new Product.Product(10, "Max Stock Test Product", 100, 499999);
+            product.IncreaseStock(1);
+            Assert.That(product.StockAmount, Is.EqualTo(500000));  
+        }
+
+        [Test]
+        public void DecreaseStockToZero()
+        {
+            product = new Product.Product(10, "Test Product", 100, 1);
+            product.DecreaseStock(1);
+            Assert.That(product.StockAmount, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void PriceAtExactMax()
+        {
+            product = new Product.Product(10, "Max exact price product", 5000, 100);
+            Assert.That(product.ItemPrice, Is.EqualTo(5000));
+        }
+
+        [Test]
+        public void PriceAtExactMin()
+        {
+            product = new Product.Product(10, "Min exact price product", 5, 100);
+            Assert.That(product.ItemPrice, Is.EqualTo(5));
+        }
+
     }
 }
 

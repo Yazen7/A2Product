@@ -22,15 +22,6 @@
             ItemPrice = itemPrice;
             StockAmount = stockAmount;
         }
-
-       
-        public void IncreaseStock(int amount)
-        {
-            if (amount < 0)
-                throw new ArgumentException("Increase amount must be positive.", nameof(amount));
-            StockAmount += amount;
-        }
-
         public void DecreaseStock(int amount)
         {
             if (amount < 0)
@@ -39,5 +30,15 @@
                 throw new InvalidOperationException("Decrease stock amount had exceeds the current stock");
             StockAmount -= amount;
         }
+        public void IncreaseStock(int amount)
+        {
+            if (amount < 0)
+                throw new ArgumentException("Increase amount must be positive.", nameof(amount));
+            if (StockAmount + amount > 500000)
+                throw new InvalidOperationException("Cannot exceed maximum stock of 500000.");
+            StockAmount += amount;
+        }
+
+
     }
 }
